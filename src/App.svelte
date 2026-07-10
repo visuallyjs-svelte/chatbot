@@ -12,7 +12,7 @@
     import Palette from "./components/Palette.svelte";
     import Inspector from "./components/Inspector.svelte"
 
-    export let url = "/dataset.json";
+    const url = "/dataset.json";
 </script>
 
 <div class="vjs-chatbot">
