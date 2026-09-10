@@ -1,5 +1,5 @@
 import {AnchorLocations, EVENT_TAP, PlainArrowOverlay, type OverlayVisibility} from "@visuallyjs/browser-ui";
-import {ACTION_CHOICE, ACTION_INPUT, ACTION_MESSAGE, ACTION_TEST, END, SELECTABLE, START} from "./constants";
+import {ACTION_AI, ACTION_CHOICE, ACTION_INPUT, ACTION_MESSAGE, ACTION_TEST, END, SELECTABLE, START} from "./constants";
 
 import StartComponent from './components/Start.svelte'
 import EndComponent from './components/End.svelte'
@@ -7,6 +7,7 @@ import MessageComponent from './components/Message.svelte'
 import InputComponent from './components/Input.svelte'
 import ChoiceComponent from './components/Choice.svelte'
 import TestComponent from './components/Test.svelte'
+import AiAgentComponent from './components/AiAgent.svelte'
 
 const viewOptions = {
     nodes:{
@@ -40,6 +41,10 @@ const viewOptions = {
         [ACTION_TEST]:{
             parent:SELECTABLE,
             component:TestComponent
+        },
+        [ACTION_AI]:{
+            parent:SELECTABLE,
+            component:AiAgentComponent
         }
     },
     edges:{

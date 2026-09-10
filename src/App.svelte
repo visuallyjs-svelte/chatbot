@@ -12,7 +12,8 @@
     import Palette from "./components/Palette.svelte";
     import Inspector from "./components/Inspector.svelte"
 
-    const url = "/dataset.json";
+    export let url = "/dataset.json";
+    export let hidePaletteAndInspector = false;
 </script>
 
 <div class="vjs-chatbot">
@@ -22,9 +23,11 @@
             <ControlsComponent/>
             <MiniviewComponent typeFunction={(v) => v.type}/>
         </div>
+        {#if !hidePaletteAndInspector}
         <div class="vjs-chatbot-rhs">
             <Palette/>
             <Inspector/>
         </div>
+        {/if}
     </SurfaceProvider>
 </div>
